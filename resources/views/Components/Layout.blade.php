@@ -1,3 +1,4 @@
+@props(['ContanteOfPage'=> null])
 <!DOCTYPE html>
 <html class="h-full bg-gray-100">
 <head>

@@ -14,14 +14,17 @@ Route::get('/jobs', function () {
         "name"=>"mohamed",
         "jobs"=>[
             [
+                "id"=>1,
                 "Title"=>"Doctor"
                 ,"Salary"=>"50,000$"
             ],
             [
+                "id"=>2,
                 "Title"=>"Programmer"
                 ,"Salary"=>"10,000$"
             ],
             [
+                "id"=>3,
                 "Title"=>"Teacher"
                 ,"Salary"=>"40,000$"
             ]
