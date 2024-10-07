@@ -1,4 +1,5 @@
 <x-layout>
+    <x-slot:TitleOfPage> Contact as </x-slot:TitleOfPage>
     <x-slot:nameOfPage>
         Contact Page
     </x-slot:nameOfPage>
