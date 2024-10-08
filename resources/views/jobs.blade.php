@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot:TitleOfPage> jobs as </x-slot:TitleOfPage>
+    <x-slot:TitleOfPage> jobs  </x-slot:TitleOfPage>
     <x-slot:nameOfPage>
         jobs Page
     </x-slot:nameOfPage>
