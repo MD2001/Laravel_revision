@@ -3,7 +3,7 @@
     <x-slot:nameOfPage>
         jobs Page
     </x-slot:nameOfPage>
-    <x-slot:ContanteOfPage>{{$name}} , welcome to Home jobs page please know more about as</x-slot:ContanteOfPage>
+    <x-slot:ContanteOfPage> welcome to Home jobs page please know more about as</x-slot:ContanteOfPage>
 
     <ul>
     @foreach ($jobs as $job )

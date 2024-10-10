@@ -1,46 +1,14 @@
 <?php
 namespace App\Models;
 
-use Illuminate\Support\Arr;
-class Job
-{
-    public static  function all(): array
-    {
-       return [
-            [
-                "id"=>1,
-                "Title"=>"Doctor"
-                ,"Salary"=>"50,000$"
-            ],
-            [
-                "id"=>2,
-                "Title"=>"Programmer"
-                ,"Salary"=>"10,000$"
-            ],
-            [
-                "id"=>3,
-                "Title"=>"Teacher"
-                ,"Salary"=>"40,000$"
-            ],
-            [
-                "id"=>4,
-                "Title"=>"Enginering"
-                ,"Salary"=>"80,000$"
-            ]
-            ];
-    }
+use Illuminate\Database\Eloquent\Model;
 
-    public static function find(int $id) :array
-    {
-        $job=Arr::first(Job::all(),fn($job) => $job['id']==$id);// the way to search of specific element use an anonymous function (closure) to applay filter in search
-        if(!$job)
-        {
-            abort(404);
-        }
-        else
-        {
-            return $job;
-        }
-          
-    }
+class Job extends Model
+{
+    /*this line used to tell eloquent model that this class refrence the jobs_listing table in data base 
+    without change the name of the class to the name of table in database  */
+  protected $table="jobs_listing";  
+
+  /*this line tell the eloquent class to allow mass updata to coulmns title and slary only and ignore any thing else  */
+  protected $fillable = ['Title','Salary'];
 }
