@@ -9,6 +9,7 @@
     <strong>{{"there is no job avilabe now"}}</strong>
 @else
 <x-slot:ContanteOfPage> welcome to Home jobs page please know more about as</x-slot:ContanteOfPage>
+
     <ul>
     @foreach ($jobs as $job )
     <a href="/jobs/{{$job['id']}}">
