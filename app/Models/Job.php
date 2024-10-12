@@ -13,4 +13,12 @@ class Job extends Model
 
   /*this line tell the eloquent class to allow mass updata to coulmns title and slary only and ignore any thing else  */
   protected $fillable = ['Title','Salary'];
+
+
+  public function employer()
+  {
+    /*for not clear reason it need the $foreignKey to show the realtionship in tinker -at lest for now-  */
+    return $this->belongsTo(Employee::class,"job_id");
+  }
+
 }
