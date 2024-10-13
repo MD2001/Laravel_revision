@@ -18,7 +18,7 @@ class Job extends Model
   public function employer()
   {
     /*for not clear reason it need the $foreignKey to show the realtionship in tinker -at lest for now-  */
-    return $this->belongsTo(Employee::class,"job_id");
+    return $this->belongsTo(Employee::class,"employee_id");
   }
 
 }
