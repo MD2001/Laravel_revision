@@ -8,15 +8,18 @@
     @if (count($jobs)== 0)
     <strong>{{"there is no job avilabe now"}}</strong>
 @else
-<x-slot:ContanteOfPage> welcome to Home jobs page please know more about as</x-slot:ContanteOfPage>
-
-    <ul>
+    <div class="space-y-4">
     @foreach ($jobs as $job )
-    <a href="/jobs/{{$job['id']}}">
-    <li><strong>{{$job["Title"]}}</strong> : Salary is {{$job['Salary']}}</li>
+    <a href="/jobs/{{$job['id']}}" class="block px-4 py-6 border border-gray-200 rounded-lg bg-gray-300">
+
+        <div class="text-blue-500 font-bold text-sm">{{$job->employer->first_name}} {{$job->employer->last_name}}</div>
+
+    <div>
+        <strong>{{$job["Title"]}}</strong> : Salary is {{$job['Salary']}}
+    </div>
     </a>
     @endforeach
-    </ul>
+    </div>
 
     @endif
 </x-layout>
