@@ -20,6 +20,6 @@
     </a>
     @endforeach
     </div>
-
+<div>{{$jobs->links()}}</div>
     @endif
 </x-layout>
