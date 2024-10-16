@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $jobs=Job::factory(30)->create();
         $tags=Tag::factory(30)->create();
 
+         // Iterate through each job and assign random tags
         foreach ($jobs as $job) {
             $randomTags = $tags->random(rand(1, 3))->pluck('id')->toArray();
 
