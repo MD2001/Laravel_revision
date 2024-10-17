@@ -12,8 +12,9 @@ class Job extends Model
   protected $table="jobs_listings";  
 
   /*this line tell the eloquent class to allow mass updata to coulmns title and slary only and ignore any thing else  */
-  protected $fillable = ['Title','Salary'];
-
+  /*the oppist of the $fillable is gurded */
+  protected $fillable = ["employee_id",'Title','Salary'];
+  
 
   public function employer()
   {
