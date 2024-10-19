@@ -33,6 +33,14 @@ Route::get('/contact', function () {
 
 Route::post('/jobs', function () {  
 
+    /**
+     * if the validation fall it will reteurn the previouse form and  throw error and will not go to the next line of code
+     */
+        request()->validate([
+            'Title'=>['required','min:3'],
+            'Salary'=>['required'],
+        ]);
+
         Job::create([
         'Title'=>request('Title'),
          'employee_id'=>1,
