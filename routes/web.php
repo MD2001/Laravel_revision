@@ -22,9 +22,8 @@ Route::get('/jobs/create', function () {
 });
 
 Route::get('/jobs/{id}', function ($id) {
-       $job=Job::find($id);
-    return view("jobs.show",["job"=>$job]);
 
+    return view("jobs.show",["job"=>Job::find($id)]);
 });
 
 Route::get('/contact', function () {
@@ -48,4 +47,42 @@ Route::post('/jobs', function () {
      ]);
 
     return redirect("/jobs");
+});
+
+//edite
+Route::get('/jobs/{id}/edit', function ($id) {
+    $job=Job::find($id);
+ return view("jobs.edit",["job"=>$job]);
+
+});
+
+//Update
+Route::patch('/jobs/{id}', function ($id) {
+   
+   /**
+     * if the validation fall it will reteurn the previouse form and  throw error and will not go to the next line of code
+     */
+    request()->validate([
+        'Title'=>['required','min:3'],
+        'Salary'=>['required'],
+    ]);
+
+    $job=Job::findOrFail($id);
+
+    $job->update([
+        'Title'=>request("Title"),
+        'Salary'=>request('Salary'),
+    ]);
+    
+    
+    return redirect("/jobs/{{$job->id}}");
+
+});
+
+//Delete
+Route::delete('/jobs/{id}', function ($id) {
+    Job::findOrFail($id)->delete();
+
+    return redirect("/jobs");
+
 });
