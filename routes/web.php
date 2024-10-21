@@ -75,11 +75,14 @@ Route::patch('/jobs/{id}', function ($id) {
         'Salary'=>request('Salary'),
     ]);
     
-    return view("jobs.show",["job"=>Job::find($id)]);
+    return redirect('/jobs/' . $job->id); //another solution
+
+    // return view("jobs.show",["job"=>Job::find($id)]);
 });
 
 //Delete
 Route::delete('/jobs/{id}', function ($id) {
+    // dd([gettype($id),$id,Job::find($id)]);
     Job::findOrFail($id)->delete();
 
     return redirect("/jobs");
