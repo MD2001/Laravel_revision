@@ -23,6 +23,7 @@ Route::get('/jobs/create', function () {
 
 Route::get('/jobs/{id}', function ($id) {
 
+    // dd([gettype($id),$id,Job::find($id)]);
     return view("jobs.show",["job"=>Job::find($id)]);
 });
 
@@ -74,9 +75,7 @@ Route::patch('/jobs/{id}', function ($id) {
         'Salary'=>request('Salary'),
     ]);
     
-    
-    return redirect("/jobs/{{$job->id}}");
-
+    return view("jobs.show",["job"=>Job::find($id)]);
 });
 
 //Delete

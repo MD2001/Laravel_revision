@@ -5,10 +5,10 @@
     </x-slot:nameOfPage>    
 <form method="POST" action="/jobs/{{$job->id}}">
   
-
     @csrf  {{-- let laravel to let me in and know that i am good guy  --}}
 
     @method('PATCH') {{-- this tell the frame work that is patch not post but the browser support only the post or the get--}}
+
     <div class="space-y-12">
       <div class="border-b border-gray-900/10 pb-12">
  
