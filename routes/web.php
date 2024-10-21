@@ -3,14 +3,18 @@
 use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/','Home');
-
-Route::get('/jobs',[JobController::class,'index']);
-Route::get('/jobs/create',[JobController::class,"ShowCreate"]);
-Route::get('/jobs/{job}',[JobController::class,"show"]);
-Route::post('/jobs',[JobController::class,'create']);
-Route::get('/jobs/{job}/edit',[JobController::class,'edite']);
-Route::patch('/jobs/{job}',[JobController::class,'update']);
-Route::delete('/jobs/{job}',[JobController::class,'delete']);
+Route::view('/','Home');    //this only for static view which just read the url and redirect to specific page
 
 Route::view('/contact','contact');
+
+Route::controller(JobController::class)->group(function()
+{
+    Route::get('/jobs','index');
+    Route::get('/jobs/create',"ShowCreate");
+    Route::get('/jobs/{job}',"show");
+    Route::post('/jobs','create');
+    Route::get('/jobs/{job}/edit','edite');
+    Route::patch('/jobs/{job}','update');
+    Route::delete('/jobs/{job}','delete');
+
+});
