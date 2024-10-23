@@ -3,57 +3,58 @@
     <x-slot:nameOfPage>
         Register
     </x-slot:nameOfPage>
-    <form method="POST" action="/login">
+    <form method="POST" action="/register">
         @csrf {{-- let laravel to let me in and know that i am good guy  --}}
-        <div class="space-y-5"> 
+        <div class="space-y-5">
             <div class="border-b border-gray-900/10 pb-5">
                 {{-- first name --}}
                 <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-4">
-                        <x-form_lable for="First_Name">First_Name</x-form_lable>
+                        <x-form_lable for="first_name">First_Name</x-form_lable>
                         <div class="mt-2">
-                            <x-form_input required name="First_Name" id="First_Name" />
-                            <x-form_error name="First_Name" />
+                            <x-form_input required name="first_name" id="first_name" />
+                            <x-form_error name="first_name" />
                         </div>
                     </div>
                 </div>
                 {{-- last name --}}
                 <div class="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-4">
-                        <x-form_lable for="Last_Name">Last_Name</x-form_lable>
+                        <x-form_lable for="last_name">Last_Name</x-form_lable>
                         <div class="mt-2">
-                            <x-form_input required name="Last_Name" id="Last_Name" />
-                            <x-form_error name="Last_Name" />
+                            <x-form_input required name="last_name" id="last_name" />
+                            <x-form_error name="last_name" />
                         </div>
                     </div>
                 </div>
                 {{-- E-mail --}}
                 <div class="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-4">
-                        <x-form_lable for="E-mail">E-mail</x-form_lable>
+                        <x-form_lable for="email">email</x-form_lable>
                         <div class="mt-2">
-                            <x-form_input required name="E-mail" id="E-mail" type="email" />
-                            <x-form_error name="E-mail" />
+                            <x-form_input required name="email" id="email" type="email" />
+                            <x-form_error name="email" />
                         </div>
                     </div>
                 </div>
                 {{-- password --}}
                 <div class="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-4">
-                        <x-form_lable for="Password">Password</x-form_lable>
+                        <x-form_lable for="password">password</x-form_lable>
                         <div class="mt-2">
-                            <x-form_input required name="Password" id="Password" type="password" />
-                            <x-form_error name="Password" />
+                            <x-form_input required name="password" id="password" type="password" />
+                            <x-form_error name="password" />
                         </div>
                     </div>
                 </div>
                 {{-- verfie password --}}
                 <div class="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-4">
-                        <x-form_lable for="Password_Confirmation">Password Confirm</x-form_lable>
+                        <x-form_lable for="password_confirmation">Password Confirm</x-form_lable>
                         <div class="mt-2">
-                            <x-form_input required name="Password_Confirmation" id="Password_Confirmation" type="password" />
-                            <x-form_error name="Password_Confirmation" />
+                            <x-form_input required name="password_confirmation" id="password_confirmation"
+                                type="password" />
+                            <x-form_error name="password_confirmation" />
                         </div>
                     </div>
                 </div>
