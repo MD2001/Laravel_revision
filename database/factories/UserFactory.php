@@ -50,4 +50,16 @@ class UserFactory extends Factory
             'admin' => true,
         ]);
     }
+    public function me(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'first_name' => 'Mohamed',
+            'last_name' => 'Diaa',
+            'email' => 'Mohamed@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('123123'),
+            'remember_token' => Str::random(10),
+            'admin'=>false,
+        ]);
+    }
 }

@@ -15,9 +15,18 @@ Route::controller(JobController::class)->group(function()
     Route::get('/jobs/create',"ShowCreate");
     Route::get('/jobs/{job}',"show");
     Route::post('/jobs','create');
-    Route::get('/jobs/{job}/edit','edite');
-    Route::patch('/jobs/{job}','update');
-    Route::delete('/jobs/{job}','delete');
+
+    Route::get('/jobs/{job}/edit','edite')
+        ->middleware('auth')
+        ->can('edite-job','job');
+
+    Route::patch('/jobs/{job}','update')
+        ->middleware('auth')
+        ->can('edite-job','job');
+
+    Route::delete('/jobs/{job}','delete')
+        ->middleware('auth')
+        ->can('edite-job','job');
 
 });
 
